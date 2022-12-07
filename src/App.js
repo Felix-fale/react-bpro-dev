@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const titre = "salut a tous";
+  const contenu = "ici le contenu de notre article";
+  const likes = 150;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="contenu">
+        <h2>{titre} </h2>
+        <p>{contenu} </p>
+        <p>{likes} personnes ont aimé </p>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+// 33m00s 
