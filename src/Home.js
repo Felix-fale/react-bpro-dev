@@ -21,13 +21,15 @@ function Home() {
   return (
     <div className="home">
       <div className="bloglist">
-        <div className="blog">
-          <a href="" className="blog-titre">
-            Le titre
-          </a>
-          <small className="bmog-publication-date">Publier le ...</small>
-          <p className="blog-author">Publier par: ...</p>
-        </div>
+        {blogs.map((blog) => (
+          <div className="blog" key={blog.id}>
+            <a href="/" className="blog-titre">
+              {blog.title}
+            </a>
+            <small className="bmog-publication-date">{blog.author}</small>
+            <p className="blog-author">{blog.date}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
