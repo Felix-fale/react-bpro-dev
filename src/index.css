@@ -68,6 +68,9 @@
   padding: 1rem;
   margin: 1rem 0;
 }
+.blogTitle{
+  margin: 0 auto;
+}
 
 .blog:hover{
   -webkit-box-shadow: 1px 2px 4px 1px rgba(119, 119, 119, 0.7);
