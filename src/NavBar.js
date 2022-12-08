@@ -12,7 +12,7 @@ function NavBar(props) {
                 <li>
                     <a href="/" className='lien buttonArticle'>Creer un article</a>
                 </li>
-                 
+
             </ul>
         </nav>
     );
