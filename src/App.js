@@ -1,21 +1,21 @@
 import "./App.css";
+import Home from "./Home";
+import NavBar from "./NavBar";
 
 function App() {
-  const titre = "salut a tous";
-  const contenu = "ici le contenu de notre article";
-  const likes = 150;
+  
   return (
     <div className="App">
+      <NavBar></NavBar>
       <div className="contenu">
-        <h2>{titre} </h2>
-        <p>{contenu} </p>
-        <p>{likes} personnes ont aimé </p>
+        <Home></Home>
       </div>
     </div>
   );
 }
 
+
 export default App;
 
 // https://www.youtube.com/watch?v=Ny3iznrppnU&t=946s Lien du cours
-// 33m00s 
+// 55m50s
