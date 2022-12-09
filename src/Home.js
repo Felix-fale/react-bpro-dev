@@ -26,13 +26,22 @@ function Home() {
     },
   ]);
 
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlog(newBlogs);
+  };
+
   return (
     <div className="home">
-      <BlogList blogs={blogs} title={"Liste des blogs"}></BlogList>
       <BlogList
+        blogs={blogs}
+        title={"Liste des blogs"}
+        handleDelete={handleDelete}
+      ></BlogList>
+      {/* <BlogList
         blogs={blogs.filter((blog) => blog.author === "tony")}
         title={"Liste des blogs de tony"}
-      ></BlogList>
+      ></BlogList> */}
     </div>
   );
 }
