@@ -26,6 +26,8 @@ function Home() {
     },
   ]);
 
+  const [name, setName] = useState("fale");
+
   const handleDelete = (id) => {
     const newBlogs = blogs.filter((blog) => blog.id !== id);
     setBlog(newBlogs);
@@ -33,7 +35,8 @@ function Home() {
 
   useEffect(() => {
     console.log("useEffect");
-  })
+    console.log(blogs);
+  }, [name]);
 
   return (
     <div className="home">
@@ -46,6 +49,8 @@ function Home() {
         blogs={blogs.filter((blog) => blog.author === "tony")}
         title={"Liste des blogs de tony"}
       ></BlogList> */}
+      <button onClick={ () => setName('tony')}>Changer le nom</button>
+      <p>{name} </p>
     </div>
   );
 }
