@@ -1,4 +1,4 @@
-function BlogList({ blogs, title, handleDelete }) {
+function BlogList({ blogs, title }) {
   return (
     <div>
       <div className="bloglist">
@@ -10,9 +10,7 @@ function BlogList({ blogs, title, handleDelete }) {
             </a>
             <small className="bmog-publication-date">{blog.author}</small>
             <p className="blog-author">{blog.date}</p>
-            <button onClick={() => handleDelete(blog.id)}>
-              Supprimer l'article
-            </button>
+
           </div>
         ))}
       </div>
