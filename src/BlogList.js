@@ -8,9 +8,10 @@ function BlogList({ blogs, title }) {
             <a href="/" className="blog-titre">
               {blog.title}
             </a>
-            <small className="bmog-publication-date">{blog.author}</small>
-            <p className="blog-author">{blog.date}</p>
-
+            <small className="bmog-publication-date">
+              Publié le {blog.date}
+            </small>
+            <p className="blog-author">Publié par: {blog.author}</p>
           </div>
         ))}
       </div>

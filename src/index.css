@@ -67,6 +67,8 @@
   text-align: left;
   padding: 1rem;
   margin: 1rem 0;
+  background: #f1f6fb;
+  border-radius: 5px;
 }
 .blogTitle{
   margin: 0 auto;
