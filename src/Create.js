@@ -1,12 +1,15 @@
 import { useState } from "react";
 
 function Create(props) {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [body, setBody] = useState('');
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [body, setBody] = useState("");
+  const handleBlogAdding = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="create-blog">
-      <form className="form">
+      <form onSubmit={handleBlogAdding} className="form">
         <div className="form-group">
           <label htmlFor="title">Titre de l'article</label>
           <input
@@ -44,16 +47,9 @@ function Create(props) {
           ></textarea>
         </div>
         <div className="form-group">
-          {/* {!isLoading && (
-            <button type="submit" className="btn-create">
-              Creer Article
-            </button>
-          )}
-          {isLoading && (
-            <button type="submit" className="btn-create" disabled>
-              En cour de traitement ...
-            </button>
-          )} */}
+          <button type="submit" className="btn-create">
+            Creer Article
+          </button>
         </div>
       </form>
     </div>
