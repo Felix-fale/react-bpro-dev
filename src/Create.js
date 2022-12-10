@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function Create(props) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const history = useHistory();
 
   const handleBlogAdding = (e) => {
     e.preventDefault();
@@ -20,6 +23,9 @@ function Create(props) {
     }).then(() => {
       console.log("article ajouter avec succes.");
       setIsLoading(false);
+
+    //   history.go(1);
+      history.push('/');
     });
   };
   return (
