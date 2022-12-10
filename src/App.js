@@ -16,4 +16,4 @@ function App() {
 export default App;
 
 // https://www.youtube.com/watch?v=Ny3iznrppnU&t=946s Lien du cours
-// 02h13m
+// 02h54m26
