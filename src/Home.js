@@ -3,7 +3,7 @@ import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
 function Home() {
-  const { data: blogs, isLoading, error } = useFetch("http://localhost:8000/blogs");
+  const { data: blogs, isLoading, error } = useFetch("http://localhost:8000/blogs?_sort=id&_order=desc");
 
   return (
     <div className="home">
