@@ -4,8 +4,23 @@ function Create(props) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleBlogAdding = (e) => {
     e.preventDefault();
+    const tmp_date = new Date().toISOString().split("T");
+    const date = `${tmp_date[0]} ${tmp_date[1]}`;
+    const blog = { title, author, body, date };
+    setIsLoading(true);
+
+    fetch("http://localhost:8000/blogs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blog),
+    }).then(() => {
+      console.log("article ajouter avec succes.");
+      setIsLoading(false);
+    });
   };
   return (
     <div className="create-blog">
@@ -31,7 +46,7 @@ function Create(props) {
             onChange={(e) => setAuthor(e.target.value)}
           >
             <option value=""></option>
-            <option value="Fale">Duplex</option>
+            <option value="Fale">Fale</option>
             <option value="Tony">Tony</option>
           </select>
         </div>
@@ -47,9 +62,16 @@ function Create(props) {
           ></textarea>
         </div>
         <div className="form-group">
-          <button type="submit" className="btn-create">
-            Creer Article
-          </button>
+          {!isLoading && (
+            <button type="submit" className="btn-create">
+              Creer Article
+            </button>
+          )}
+          {isLoading && (
+            <button type="submit" className="btn-create" disabled>
+              En cour de traitement ...
+            </button>
+          )}
         </div>
       </form>
     </div>
