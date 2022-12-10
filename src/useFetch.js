@@ -26,8 +26,8 @@ function useFetch(url) {
           if (err.name ==="AbortError") {
             console.log("fetch a ete stopé");
           }
-          console.log(err.message);
-          setError(err.message);
+          // console.log(err.message);
+          // setError(err.message);
           setIsLoading(false);
         });
     }, 2000);
